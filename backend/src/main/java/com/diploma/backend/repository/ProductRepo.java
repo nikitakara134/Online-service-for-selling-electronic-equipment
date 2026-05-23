@@ -9,11 +9,8 @@ import java.util.List;
 
 public interface ProductRepo extends JpaRepository<Product, Long> {
 
-    // --- ДОДАЙ ЦЕЙ МЕТОД ---
-    // Spring Data JPA автоматично створить SQL запит для пошуку по назві (без урахування регістру)
     List<Product> findByTitleContainingIgnoreCase(String title);
 
-    // Ці методи ми вже додавали раніше для рекомендацій:
     List<Product> findByCategory(String category);
 
     @Query("SELECT p FROM Product p WHERE p.category = :category AND p.id NOT IN :excludedIds")

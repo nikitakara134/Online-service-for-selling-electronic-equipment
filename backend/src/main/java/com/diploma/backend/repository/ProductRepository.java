@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
-    // Тут порожньо, бо Spring Data JPA вже має всі методи всередині
+
 }
